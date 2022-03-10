@@ -1,6 +1,7 @@
 import { h, Component } from "preact";
 import { Todo } from "../interface";
 import TodoList from '../index'
+import TodoItemComponent from "../../todoitem/view";
 
 interface TodoListProps {
     name: string
@@ -27,7 +28,7 @@ export default class TodoListComponent extends Component<TodoListProps, TodoList
         return (
             <ul class="list-group">
                 {todos.map(todo => {
-                    return <li class="list-group-item">{todo.title}</li>
+                    return <TodoItemComponent todo={todo}/>
                 })}
             </ul>
         )
