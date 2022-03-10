@@ -1,4 +1,4 @@
-import {h, render} from 'preact'
+import {render} from 'preact'
 
 const main = document.querySelector("main#app");
 
