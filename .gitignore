@@ -1,5 +1,6 @@
 # Distribution / packaging
 .DS_Store
+.parcel-cache
 node_modules
 /dist
 
