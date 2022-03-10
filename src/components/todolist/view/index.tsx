@@ -16,6 +16,7 @@ export default class TodoListComponent extends Component<TodoListProps, TodoList
     private todolist: TodoList = new TodoList();
     private end: (todo: Todo) => void
     private delete: (todo: Todo) => void
+    private deleteCompleted: () => void
 
     constructor(props: TodoListProps) {
         super(props);
@@ -27,6 +28,7 @@ export default class TodoListComponent extends Component<TodoListProps, TodoList
         })
         this.end = this.todolist.end.bind(this.todolist)
         this.delete = this.todolist.delete.bind(this.todolist)
+        this.deleteCompleted = this.todolist.deleteCompleted.bind(this.todolist)
     }
 
     componentDidMount(): void {
@@ -44,7 +46,7 @@ export default class TodoListComponent extends Component<TodoListProps, TodoList
                 </ul>
                 <div class="d-grid gap-2 d-sm-flex mt-3 justify-content-sm-center">
                     <button class="btn btn-success px-4 gap-3" type="button">Add</button>
-                    <button class="btn btn-outline-warning px-4" type="button">Clear</button>
+                    <button class="btn btn-outline-warning px-4" type="button" onClick={this.deleteCompleted}>Clear</button>
                 </div>
             </div>
         )
