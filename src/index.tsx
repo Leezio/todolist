@@ -1,5 +1,6 @@
-import {render} from 'preact'
+import { h, render } from 'preact'
+import TodoListComponent from './components/todolist/view';
 
-const main = document.querySelector("main#app");
+const todolist = document.querySelector("div#todolist");
 
-render ("Hello new World !", main)
+render(<TodoListComponent name="test"/>, todolist)
