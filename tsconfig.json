@@ -1,11 +1,18 @@
 {
     "compilerOptions": {
         "outDir": "dist",
-        "target": "es2017",
+        "target": "ES6",
+        "jsx": "react",
+        "jsxFactory": "h",
         "noImplicitAny": true,
         "strict": true,
         "strictNullChecks": true,
         "strictPropertyInitialization": true,
+        "lib": [
+            "ES6",
+            "DOM",
+            "DOM.Iterable",
+        ]
     },
     "files": [
         "src/app.ts"
