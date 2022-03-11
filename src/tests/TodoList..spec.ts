@@ -38,7 +38,6 @@ describe('Test ToDoList', () => {
         todolist.end(todolist.todos[index])
         expect(todolist.todos.length).toBe(3);
         todolist.deleteCompleted()
-        console.log(todolist.todos)
         expect(todolist.todos.length).toBe(2);
     })
 
