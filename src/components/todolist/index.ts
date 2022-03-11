@@ -20,12 +20,14 @@ export default class TodoList {
     }
 
     public add(title: string): void {
-        this.todos = [{
-            id: this.getRandomId(),
-            title,
-            isFinished: false,
-            createdAt: new Date(),
-        }, ...this.todos];
+        if (title.length !== 0) {
+            this.todos = [{
+                id: this.getRandomId(),
+                title,
+                isFinished: false,
+                createdAt: new Date(),
+            }, ...this.todos];
+        }
         this.propagation()
     }
 
