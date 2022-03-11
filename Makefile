@@ -10,6 +10,10 @@ lint:
 start:
 	npm run start
 
+.PHONY: test
+test:
+	npm run test
+
 .PHONY: build
 build:
 	npm run build
