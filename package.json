@@ -2,10 +2,12 @@
   "name": "myprofessionallife",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
   "scripts": {
+    "autocompile": "npx tsc --watch",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx parcel build src/index.html --public-url ."
   },
   "keywords": [],
   "author": "",

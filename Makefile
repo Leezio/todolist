@@ -1,6 +1,6 @@
 .PHONY: autocompile
 autocompile:
-	npx tsc --watch
+	npm run autocompile
 
 .PHONY: lint
 lint:
@@ -8,4 +8,8 @@ lint:
 
 .PHONY: start
 start:
-	npx parcel src/index.html
+	npm run start
+
+.PHONY: build
+build:
+	npm run build
