@@ -35,8 +35,8 @@ export default class TodoListComponent extends Component<TodoListProps, TodoList
     }
 
     componentDidMount(): void {
-        this.todolist.add('Test 1')
-        this.todolist.add('Test 2')
+        this.todolist.add('Make chocolate cookies')
+        this.todolist.add('Tidy up my room')
     }
 
     public keep = (event: Event) => {
@@ -56,9 +56,9 @@ export default class TodoListComponent extends Component<TodoListProps, TodoList
 
     render({ name }: TodoListProps, { todos, newTodo }: TodoListStats) {
         return (
-            <div class="card shadow mb-5 bg-body rounded">
+            <div class="card shadow mb-5 p-2 bg-body rounded">
                 <div class="card-body">
-                    <h1 class="display-6 fw-bold text-center">{name}</h1>
+                    <h1 class="display-6 mb-4 text-center">{name}</h1>
                     <input class="form-control mb-3" type="text" value={newTodo} placeholder="Create a new cookie recipe" onInput={this.keep} />
                     <ul class="list-group">
                         {todos.map(todo => {

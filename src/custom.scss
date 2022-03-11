@@ -1,6 +1,15 @@
 // Include all of Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+// Override default .form-check-input from bootstrap
 .form-check-input{
     margin-right: 15px !important;
+}
+
+// Custom
+
+.github-ribbon {
+    position: fixed;
+    top: 0;
+    right: 0;
 }

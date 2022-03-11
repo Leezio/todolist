@@ -10,7 +10,7 @@
     "build": "npx parcel build src/index.html --public-url ."
   },
   "keywords": [],
-  "author": "",
+  "author": "François Flament",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.3.2",

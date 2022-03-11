@@ -15,7 +15,6 @@ export default class TodoList {
         this.callbacks.forEach(callback => callback(this))
     }
 
-
     public onChange(callback: ChangeCallback) {
         this.callbacks.push(callback)
     }
