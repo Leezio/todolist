@@ -45,7 +45,7 @@ export default class TodoList {
     }
 
     public deleteCompleted(): void {
-        this.todos = this.todos.filter(todo => todo.isFinished === true)
+        this.todos = this.todos.filter(todo => todo.isFinished === false)
         this.propagation()
     }
 }
