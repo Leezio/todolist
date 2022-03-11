@@ -1,4 +1,5 @@
 # ToDo List
+[![Node.js CI](https://github.com/Leezio/todolist/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/Leezio/todolist/actions/workflows/node.js.yml)
 
 ## ⚡️ Quickstart
 
