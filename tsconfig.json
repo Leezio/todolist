@@ -13,8 +13,5 @@
             "DOM",
             "DOM.Iterable",
         ]
-    },
-    "files": [
-        "src/app.ts"
-    ]
+    }
 }
