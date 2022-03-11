@@ -1,4 +1,5 @@
-import { h, Component, toChildArray } from "preact";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { h, Component } from "preact";
 import { Todo } from "../../todolist/interface";
 
 interface TodoItemProps {
@@ -7,6 +8,7 @@ interface TodoItemProps {
     onDelete: (todo: Todo) => void
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface TodoItemStats { }
 
 export default class TodoItemComponent extends Component<TodoItemProps, TodoItemStats> {

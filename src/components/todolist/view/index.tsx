@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { h, Component } from "preact";
 import { Todo } from "../interface";
 import TodoList from '../index'
@@ -8,7 +9,8 @@ interface TodoListProps {
 }
 
 interface TodoListStats {
-    todos: Todo[]
+    todos: Todo[],
+    newTodo: string,
 }
 
 export default class TodoListComponent extends Component<TodoListProps, TodoListStats> {
@@ -21,7 +23,8 @@ export default class TodoListComponent extends Component<TodoListProps, TodoList
     constructor(props: TodoListProps) {
         super(props);
         this.state = {
-            todos: []
+            todos: [],
+            newTodo: "",
         }
         this.todolist.onChange((todolist) => {
             this.setState({ todos: todolist.todos })
@@ -36,17 +39,36 @@ export default class TodoListComponent extends Component<TodoListProps, TodoList
         this.todolist.add('Test 2')
     }
 
-    render({ name }: TodoListProps, { todos }: TodoListStats) {
+    public keep = (event: Event) => {
+        event.preventDefault();
+        this.setState({
+            newTodo: (event.target as HTMLInputElement).value
+        })
+    }
+
+    public add = (event: Event) => {
+        event.preventDefault();
+        this.todolist.add(this.state.newTodo)
+        this.setState({
+            newTodo: ""
+        })
+    }
+
+    render({ name }: TodoListProps, { todos, newTodo }: TodoListStats) {
         return (
-            <div>
-                <ul class="list-group">
-                    {todos.map(todo => {
-                        return <TodoItemComponent todo={todo} onEnd={this.end} onDelete={this.delete} />
-                    })}
-                </ul>
-                <div class="d-grid gap-2 d-sm-flex mt-3 justify-content-sm-center">
-                    <button class="btn btn-success px-4 gap-3" type="button">Add</button>
-                    <button class="btn btn-outline-warning px-4" type="button" onClick={this.deleteCompleted}>Clear</button>
+            <div class="card shadow mb-5 bg-body rounded">
+                <div class="card-body">
+                    <h1 class="display-6 fw-bold text-center">{name}</h1>
+                    <input class="form-control mb-3" type="text" value={newTodo} placeholder="Create a new cookie recipe" onInput={this.keep} />
+                    <ul class="list-group">
+                        {todos.map(todo => {
+                            return <TodoItemComponent todo={todo} onEnd={this.end} onDelete={this.delete} />
+                        })}
+                    </ul>
+                    <div class="d-grid gap-2 d-sm-flex mt-3 justify-content-sm-center">
+                        <button class="btn btn-success px-4 gap-3" type="button" onClick={this.add}>Add</button>
+                        <button class="btn btn-outline-warning px-4" type="button" onClick={this.deleteCompleted}>Clear</button>
+                    </div>
                 </div>
             </div>
         )

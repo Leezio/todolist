@@ -11,12 +11,12 @@ export default class TodoList {
         return Math.random().toString(36).substring(2, 9)
     }
 
-    private propagation(){
+    private propagation() {
         this.callbacks.forEach(callback => callback(this))
     }
 
 
-    public onChange(callback: ChangeCallback){
+    public onChange(callback: ChangeCallback) {
         this.callbacks.push(callback)
     }
 
@@ -37,7 +37,11 @@ export default class TodoList {
 
     public delete(todo: Todo): void {
         const index = this.todos.findIndex(currentTodo => currentTodo.id === todo.id)
-        this.todos = this.todos.slice(0, index)
+        console.log(index)
+        this.todos = [
+            ...this.todos.slice(0, index),
+            ...this.todos.slice(index + 1)
+        ]
         this.propagation()
     }
 
